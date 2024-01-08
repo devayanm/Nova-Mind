@@ -1,0 +1,212 @@
+// src/components/Home.js
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Pie } from 'react-chartjs-2';
+import 'chart.js/auto';
+import { useState, useEffect } from 'react';
+
+
+const Home = () => {
+    const [mentalHealthData, setMentalHealthData] = useState({
+        labels: ['Affected', 'Not Affected'],
+        datasets: [
+            {
+                data: [70, 30], // Replace with actual mental health data percentages
+                backgroundColor: ['#dc3545', '#28a745'],
+            },
+        ],
+    });
+
+    const pieChartOptions = {
+        maintainAspectRatio: false,
+        height: 200,
+        width: 200,
+        plugins: {
+            legend: {
+                display: false,
+            },
+        },
+    };
+
+    return (
+        <div>
+            <section className="hero text-center text-white bg-primary py-5">
+                <div className="container">
+                    <div className="row align-items-center">
+                        <div className="col-md-6 text-md-left">
+                            <h1 className="display-4">Mental Wellness Hub</h1>
+                            <p className="lead">Empowering Your Mental Health Journey</p>
+                            <Link to="/resources" className="btn btn-light btn-lg">
+                                Explore Resources
+                            </Link>
+                        </div>
+                        <div className="col-md-6">
+                            <img src="./img/hero-img.png" alt="Mental Wellness" className="img-fluid" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Who We Are Section */}
+            <section className="py-5">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-lg-6">
+                            <h2 className="display-4 text-primary">Who We Are</h2>
+                            <p className="lead">
+                                We are a dedicated team passionate about mental health and wellness. Our mission is to provide
+                                resources, support, and guidance to help individuals on their mental health journey.
+                            </p>
+                        </div>
+                        <div className="col-lg-6">
+                            <img
+                                src="https://via.placeholder.com/500x300" // Replace with an actual image URL
+                                alt="Who We Are"
+                                className="img-fluid rounded"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* What We Do Section */}
+            <section className="bg-light py-5">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-lg-6">
+                            <img
+                                src="https://via.placeholder.com/500x300" // Replace with an actual image URL
+                                alt="What We Do"
+                                className="img-fluid rounded"
+                            />
+                        </div>
+                        <div className="col-lg-6">
+                            <h2 className="display-4 text-primary">What We Do</h2>
+                            <p className="lead">
+                                We provide a comprehensive platform with resources, articles, webinars, and support
+                                networks to empower individuals in their mental health journey.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Our Mission Section */}
+            <section className="py-5">
+                <div className="container">
+                    <h2 className="display-4 text-center text-primary">Our Mission</h2>
+                    <p className="lead text-center">
+                        Our mission is to break the stigma surrounding mental health, promote awareness, and provide
+                        accessible resources to everyone seeking support.
+                    </p>
+                </div>
+            </section>
+
+            <section className="py-5">
+                <div className="container">
+                    <h2 className="display-4 text-center text-primary">Mental Health Statistics</h2>
+                    <p className="lead text-center">
+                        Explore real-time feedback on the impact of mental health on individuals. Our community actively contributes to
+                        these statistics, fostering awareness and understanding.
+                    </p>
+                    <div className="text-center">
+                        <Pie data={mentalHealthData} options={pieChartOptions} />
+                    </div>
+                    <div className="text-center mt-4">
+                        <p className="lead">
+                            Want to dive deeper into mental health statistics? Click the button below.
+                        </p>
+                        <Link to="/mental-health-statistics" className="btn btn-primary btn-lg">
+                            View Detailed Statistics
+                        </Link>
+                    </div>
+                </div>
+            </section>
+
+            {/* What We Offer Section */}
+            <section className="services-section bg-light py-5">
+                <div className="container">
+                    <h2 className="section-heading text-center text-primary">What We Offer</h2>
+                    <div className="row">
+                        {/* Service Cards */}
+                        <div className="col-lg-4">
+                            <div className="card">
+                                <div className="card-body">
+                                    <h5 className="card-title">Online Support Groups</h5>
+                                    <p className="card-text">
+                                        Connect with others who share similar experiences.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="col-lg-4">
+                            <div className="card">
+                                <div className="card-body">
+                                    <h5 className="card-title">Wellness Workshops</h5>
+                                    <p className="card-text">
+                                        Participate in workshops to enhance your well-being.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="col-lg-4">
+                            <div className="card">
+                                <div className="card-body">
+                                    <h5 className="card-title">Mindfulness Meditation</h5>
+                                    <p className="card-text">
+                                        Learn mindfulness techniques for mental clarity.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Join Us Section */}
+            <section className="bg-light py-5">
+                <div className="container">
+                    <h2 className="display-4 text-center text-primary">Join Us</h2>
+                    <p className="lead text-center">
+                        Join our community of mental health advocates. Together, we can make a positive impact on mental
+                        wellness.
+                    </p>
+                    <div className="text-center">
+                        <Link to="/register" className="btn btn-primary btn-lg">
+                            Get Started
+                        </Link>
+                    </div>
+                </div>
+            </section>
+
+            {/* Crisis Helpline Numbers Section */}
+            <section className="py-5">
+                <div className="container">
+                    <h2 className="display-4 text-center text-primary">Crisis Helpline Numbers</h2>
+                    <p className="lead text-center">
+                        In case of emergency, reach out to the following helpline numbers:
+                    </p>
+                    <div className="row justify-content-center">
+                        <div className="col-md-6">
+                            <ul className="list-group list-group-flush">
+                                <li className="list-group-item">National Suicide Prevention Lifeline: 1-800-273-TALK (8255)</li>
+                                <li className="list-group-item">Crisis Text Line: Text "HOME" to 741741</li>
+                                <li className="list-group-item">Veterans Crisis Line: 1-800-273-8255 (Press 1)</li>
+                                {/* Add more helpline numbers as needed */}
+                            </ul>
+                        </div>
+                    </div>
+                    <div className="text-center mt-4">
+                        <Link to="/emergency-help" className="btn btn-danger btn-lg">
+                            Extreme Emergency Help
+                        </Link>
+                    </div>
+                </div>
+            </section>
+        </div>
+    );
+};
+
+export default Home;
