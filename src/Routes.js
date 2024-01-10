@@ -14,17 +14,10 @@ const AppRoutes = () => {
     return (
         <Routes>
             <Route path="/" element={<Home />} />
-            <Route
-                path="/dashboard"
-                element={
-                    <ProtectedRoute>
-                        <Dashboard />
-                    </ProtectedRoute>
-                }
-            />
-            <Route path="/resources" element={<Resources />} />
-            <Route path="/therapists" element={<TherapistDirectory />} />
-            <Route path="/profile" element={<Profile />} />
+            <Route path="/dashboard" element={ <ProtectedRoute> <Dashboard /> </ProtectedRoute>}/>
+            <Route path="/resources" element={<ProtectedRoute> <Resources /> </ProtectedRoute>}/>
+            <Route path="/therapists" element={<ProtectedRoute> <TherapistDirectory /> </ProtectedRoute>}/>
+            <Route path="/profile" element={<ProtectedRoute> <Profile /> </ProtectedRoute>}/>
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
         </Routes>

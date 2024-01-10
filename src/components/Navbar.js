@@ -169,26 +169,26 @@ const Navbar = () => {
                                     Home
                                 </Link>
                             </li>
-                            <li className="nav-item">
-                                <Link to="/resources" className="nav-link" style={{ fontSize: '1.2rem', marginRight: '15px' }}>
-                                    <FontAwesomeIcon icon={faBook} className="mr-1" />
-                                    Resources
-                                </Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link to="/dashboard" className="nav-link" style={{ fontSize: '1.2rem', marginRight: '15px' }}>
-                                    <FontAwesomeIcon icon={faTachometerAlt} className="mr-1" />
-                                    Dashboard
-                                </Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link to="/therapists" className="nav-link" style={{ fontSize: '1.2rem', marginRight: '15px' }}>
-                                    <FontAwesomeIcon icon={faUserMd} className="mr-1" />
-                                    Therapists
-                                </Link>
-                            </li>
                             {user ? (
                                 <>
+                                    <li className="nav-item">
+                                        <Link to="/resources" className="nav-link" style={{ fontSize: '1.2rem', marginRight: '15px' }}>
+                                            <FontAwesomeIcon icon={faBook} className="mr-1" />
+                                            Resources
+                                        </Link>
+                                    </li>
+                                    <li className="nav-item">
+                                        <Link to="/dashboard" className="nav-link" style={{ fontSize: '1.2rem', marginRight: '15px' }}>
+                                            <FontAwesomeIcon icon={faTachometerAlt} className="mr-1" />
+                                            Dashboard
+                                        </Link>
+                                    </li>
+                                    <li className="nav-item">
+                                        <Link to="/therapists" className="nav-link" style={{ fontSize: '1.2rem', marginRight: '15px' }}>
+                                            <FontAwesomeIcon icon={faUserMd} className="mr-1" />
+                                            Therapists
+                                        </Link>
+                                    </li>
                                     <li className="nav-item">
                                         <Link to="/profile" className="nav-link" style={{ fontSize: '1.2rem', marginRight: '15px' }}>
                                             <FontAwesomeIcon icon={faUser} className="mr-1" />

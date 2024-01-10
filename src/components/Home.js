@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { Pie } from 'react-chartjs-2';
 import 'chart.js/auto';
 import { useState, useEffect } from 'react';
+import { FaUsers, FaCogs, FaBrain } from 'react-icons/fa';
+
 
 const Home = () => {
     const [mentalHealthData, setMentalHealthData] = useState({
@@ -47,7 +49,7 @@ const Home = () => {
 
             <section className="py-5">
                 <div className="container">
-                    <div className="row">
+                    <div className="row text-center d-flex align-items-center">
                         <div className="col-lg-6">
                             <h2 className="display-4 text-primary">Who We Are</h2>
                             <p className="lead">
@@ -68,20 +70,20 @@ const Home = () => {
 
             <section className="bg-light py-5">
                 <div className="container">
-                    <div className="row">
+                    <div className="row flex-row-reverse d-flex align-items-center">
+                        <div className="col-lg-6 text-center">
+                            <h2 className="display-4 text-primary">What We Do</h2>
+                            <p className="lead">
+                                We provide a comprehensive platform with resources, articles, webinars, and support
+                                networks to empower individuals in their mental health journey.
+                            </p>
+                        </div>
                         <div className="col-lg-6">
                             <img
                                 src="./img/img1.png"
                                 alt="What We Do"
                                 className="img-fluid rounded"
                             />
-                        </div>
-                        <div className="col-lg-6">
-                            <h2 className="display-4 text-primary">What We Do</h2>
-                            <p className="lead">
-                                We provide a comprehensive platform with resources, articles, webinars, and support
-                                networks to empower individuals in their mental health journey.
-                            </p>
                         </div>
                     </div>
                 </div>
@@ -128,38 +130,35 @@ const Home = () => {
 
             <section className="services-section bg-light py-5">
                 <div className="container">
-                    <h2 className="section-heading text-center text-primary">What We Offer</h2>
-                    <div className="row">
-                        <div className="col-lg-4">
-                            <div className="card">
-                                <div className="card-body">
-                                    <h5 className="card-title">Online Support Groups</h5>
-                                    <p className="card-text">
-                                        Connect with others who share similar experiences.
-                                    </p>
-                                </div>
+                    <h2 className="section-heading text-center text-primary mb-5">What We Offer</h2>
+                    <div className="card-deck">
+                        <div className="card service-card">
+                            <div className="card-body text-center">
+                                <FaUsers className="fs-3x mb-3 service-icon" />
+                                <h5 className="card-title">Online Support Groups</h5>
+                                <p className="card-text">
+                                    Connect with others who share similar experiences.
+                                </p>
                             </div>
                         </div>
 
-                        <div className="col-lg-4">
-                            <div className="card">
-                                <div className="card-body">
-                                    <h5 className="card-title">Wellness Workshops</h5>
-                                    <p className="card-text">
-                                        Participate in workshops to enhance your well-being.
-                                    </p>
-                                </div>
+                        <div className="card service-card">
+                            <div className="card-body text-center">
+                                <FaCogs className="fs-3x mb-3 service-icon" />
+                                <h5 className="card-title">Wellness Workshops</h5>
+                                <p className="card-text">
+                                    Participate in workshops to enhance your well-being.
+                                </p>
                             </div>
                         </div>
 
-                        <div className="col-lg-4">
-                            <div className="card">
-                                <div className="card-body">
-                                    <h5 className="card-title">Mindfulness Meditation</h5>
-                                    <p className="card-text">
-                                        Learn mindfulness techniques for mental clarity.
-                                    </p>
-                                </div>
+                        <div className="card service-card">
+                            <div className="card-body text-center">
+                                <FaBrain className="fs-3x mb-3 service-icon" />
+                                <h5 className="card-title">Mindfulness Meditation</h5>
+                                <p className="card-text">
+                                    Learn mindfulness techniques for mental clarity.
+                                </p>
                             </div>
                         </div>
                     </div>
