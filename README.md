@@ -22,29 +22,31 @@ Nova Mind leverages a powerful stack of technologies to provide a seamless and r
 
 The project structure follows a modular approach. Key directories include:
 
-nova-mind
-├─ .gitignore
-├─ .vercel
-├─ firebase-admin-sdk
-├─ package-lock.json
-├─ package.json
-└─ server
-│   ├─ models
-│   ├─ node_modules
-│   ├─ .gitignore
-│   ├─ authMiddleware.js
-│   ├─ package-lock.json
-│   ├─ package.json
-│   ├─ profileRoutes.js
-│   └─ server.js
-└─ src
-   ├─ App.js
-   ├─ components
-   ├─ context
-   ├─ firebase.js
-   ├─ index.js
-   ├─ reportWebVitals.js
-   └─ Routes.js
+   ```bash
+   nova-mind
+   ├─ .gitignore
+   ├─ .vercel
+   ├─ firebase-admin-sdk
+   ├─ package-lock.json
+   ├─ package.json
+   └─ server
+   │   ├─ models
+   │   ├─ node_modules
+   │   ├─ .gitignore
+   │   ├─ authMiddleware.js
+   │   ├─ package-lock.json
+   │   ├─ package.json
+   │   ├─ profileRoutes.js
+   │   └─ server.js
+   └─ src
+      ├─ App.js
+      ├─ components
+      ├─ context
+      ├─ firebase.js
+      ├─ index.js
+      ├─ reportWebVitals.js
+      └─ Routes.js
+   ```
 
 ## Features
 
