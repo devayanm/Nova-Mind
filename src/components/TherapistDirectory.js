@@ -1,4 +1,3 @@
-// src/components/TherapistDirectory.js
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faClock, faUser } from '@fortawesome/free-solid-svg-icons';
@@ -7,15 +6,12 @@ const TherapistDirectory = () => {
     const [therapists, setTherapists] = useState([]);
 
     useEffect(() => {
-        // Fetch therapists data from the backend
-        // Replace the placeholder URL with your actual API endpoint
         fetch('http://localhost:5000/api/therapists')
             .then(response => response.json())
             .then(data => setTherapists(data))
             .catch(error => console.error('Error fetching therapists:', error));
     }, []);
 
-    // Example or fake therapist details
     const exampleTherapists = [
         {
             _id: '1',
@@ -95,7 +91,6 @@ const TherapistDirectory = () => {
                         </div>
                     ))
                 ) : (
-                    // Render example or fake therapist details if no data is fetched
                     exampleTherapists.map((therapist, index) => (
                         <div key={therapist._id} className="col-lg-4 mb-4">
                             <div className="card therapist-card h-100 border-0 shadow">

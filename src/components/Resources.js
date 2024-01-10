@@ -1,4 +1,3 @@
-// src/components/Resources.js
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FaPlayCircle, FaBook, FaFileAlt, FaVideo, FaPodcast, FaNewspaper } from 'react-icons/fa';
@@ -7,15 +6,12 @@ const Resources = () => {
     const [resources, setResources] = useState([]);
 
     useEffect(() => {
-        // Fetch resources data from the backend or Contentful
-        // Replace the placeholder URL or Contentful API call with your actual endpoint
         fetch('http://localhost:5000/api/resources')
             .then(response => response.json())
             .then(data => setResources(data))
             .catch(error => console.error('Error fetching resources:', error));
     }, []);
 
-    // Example or fake resources details
     const exampleFeatures = [
         {
             id: '1',
@@ -53,7 +49,6 @@ const Resources = () => {
             description: 'Read informative articles providing insights into mental health.',
             type: 'Article',
         },
-        // Add more features as needed
     ];
 
     return (

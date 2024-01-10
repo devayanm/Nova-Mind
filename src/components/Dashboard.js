@@ -36,8 +36,6 @@ const Dashboard = () => {
     const [progress, setProgress] = useState(0);
 
     useEffect(() => {
-        // Fetch user goals and progress from the backend
-        // Replace the placeholder URL with your actual API endpoint
         fetch('http://localhost:5000/api/goals', {
             headers: {
                 Authorization: `Bearer ${localStorage.getItem('token')}`,
@@ -69,7 +67,6 @@ const Dashboard = () => {
                 setGoals(updatedGoals);
             } else {
                 console.error('Error adding goal:', responseData.message);
-                // Handle error
             }
         } catch (error) {
             console.error('Error adding goal:', error.message);
@@ -84,7 +81,7 @@ const Dashboard = () => {
                     'Content-Type': 'application/json',
                     Authorization: `Bearer ${localStorage.getItem('token')}`,
                 },
-                body: JSON.stringify({ description: 'Updated Description' }), // Replace with the updated description
+                body: JSON.stringify({ description: 'Updated Description' }),
             });
 
             const responseData = await response.json();
@@ -96,7 +93,6 @@ const Dashboard = () => {
                 setGoals(updatedGoals);
             } else {
                 console.error('Error updating goal:', responseData.message);
-                // Handle error
             }
         } catch (error) {
             console.error('Error updating goal:', error.message);
@@ -119,7 +115,6 @@ const Dashboard = () => {
                 setGoals(updatedGoals);
             } else {
                 console.error('Error deleting goal:', responseData.message);
-                // Handle error
             }
         } catch (error) {
             console.error('Error deleting goal:', error.message);
@@ -128,7 +123,6 @@ const Dashboard = () => {
 
 
     const initiateAppointment = (therapistId) => {
-        // Placeholder for initiating appointment scheduling
         console.log(`Initiate appointment with therapist ${therapistId}`);
     };
 

@@ -1,4 +1,3 @@
-// src/components/Footer.js
 import React from 'react';
 
 const Footer = () => {
@@ -32,7 +31,7 @@ const Footer = () => {
                 </div>
             </div>
             <div className="text-center">
-                <span className="text-muted">© 2024 Your Company. All rights reserved.</span>
+                <span className="text-muted">© 2024 Nova Mind. All rights reserved.</span>
             </div>
         </footer>
     );

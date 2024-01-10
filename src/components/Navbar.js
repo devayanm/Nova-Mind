@@ -29,7 +29,6 @@ const Navbar = () => {
 
     return (
         <>
-            {/* Navbar for small screens */}
             <nav className="navbar navbar-expand-lg navbar-dark bg-primary d-lg-none">
                 <div className="container" style={{ display: 'flex', alignItems: 'center' }}>
                     <Link to="/" className="navbar-brand">
@@ -49,7 +48,6 @@ const Navbar = () => {
                     </button>
                 </div>
 
-                {/* Sidebar for mobile screens */}
                 <div
                     style={{
                         position: 'fixed',
@@ -142,7 +140,6 @@ const Navbar = () => {
                 ></div>
             </nav>
 
-            {/* Navbar for large screens */}
             <nav className="navbar navbar-expand-lg navbar-dark bg-primary d-none d-lg-block">
                 <div className="container">
                     <Link to="/" className="navbar-brand">

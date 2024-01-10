@@ -1,4 +1,3 @@
-// src/components/Home.js
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Pie } from 'react-chartjs-2';
@@ -11,7 +10,7 @@ const Home = () => {
         labels: ['Affected', 'Not Affected'],
         datasets: [
             {
-                data: [70, 30], // Replace with actual mental health data percentages
+                data: [70, 30],
                 backgroundColor: ['#dc3545', '#28a745'],
             },
         ],
@@ -47,7 +46,6 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* Who We Are Section */}
             <section className="py-5">
                 <div className="container">
                     <div className="row">
@@ -60,7 +58,7 @@ const Home = () => {
                         </div>
                         <div className="col-lg-6">
                             <img
-                                src="https://via.placeholder.com/500x300" // Replace with an actual image URL
+                                src="https://via.placeholder.com/500x300" 
                                 alt="Who We Are"
                                 className="img-fluid rounded"
                             />
@@ -69,13 +67,12 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* What We Do Section */}
             <section className="bg-light py-5">
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-6">
                             <img
-                                src="https://via.placeholder.com/500x300" // Replace with an actual image URL
+                                src="https://via.placeholder.com/500x300" 
                                 alt="What We Do"
                                 className="img-fluid rounded"
                             />
@@ -91,7 +88,6 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* Our Mission Section */}
             <section className="py-5">
                 <div className="container">
                     <h2 className="display-4 text-center text-primary">Our Mission</h2>
@@ -123,12 +119,10 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* What We Offer Section */}
             <section className="services-section bg-light py-5">
                 <div className="container">
                     <h2 className="section-heading text-center text-primary">What We Offer</h2>
                     <div className="row">
-                        {/* Service Cards */}
                         <div className="col-lg-4">
                             <div className="card">
                                 <div className="card-body">
@@ -165,7 +159,6 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* Join Us Section */}
             <section className="bg-light py-5">
                 <div className="container">
                     <h2 className="display-4 text-center text-primary">Join Us</h2>
@@ -181,7 +174,6 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* Crisis Helpline Numbers Section */}
             <section className="py-5">
                 <div className="container">
                     <h2 className="display-4 text-center text-primary">Crisis Helpline Numbers</h2>
@@ -194,7 +186,6 @@ const Home = () => {
                                 <li className="list-group-item">National Suicide Prevention Lifeline: 1-800-273-TALK (8255)</li>
                                 <li className="list-group-item">Crisis Text Line: Text "HOME" to 741741</li>
                                 <li className="list-group-item">Veterans Crisis Line: 1-800-273-8255 (Press 1)</li>
-                                {/* Add more helpline numbers as needed */}
                             </ul>
                         </div>
                     </div>
