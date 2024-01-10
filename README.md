@@ -1,27 +1,77 @@
 # Nova Mind - Mental Wellness Platform
 
-## Project Overview
+Nova Mind empowers individuals to thrive mentally, physically, and emotionally through an integrated and personalized Mental Wellness Platform.
 
-Nova Mind is a comprehensive Mental Wellness Platform designed to empower individuals on their mental health journey. This project utilizes React for the frontend and includes various components and routes to create a seamless user experience.
+## Technologies Used
+
+Nova Mind leverages a powerful stack of technologies to provide a seamless and robust user experience:
+
+- **MERN Stack:**
+  - **MongoDB:** A NoSQL database for storing data in a flexible, JSON-like format.
+  - **Express.js:** A backend framework for building scalable and maintainable web applications.
+  - **React:** A frontend library for building dynamic user interfaces.
+  - **Node.js:** A server-side JavaScript runtime for executing server logic.
+
+- **Firebase:**
+  - Firebase is integrated into Nova Mind for authentication and real-time data storage. It provides a secure and scalable backend infrastructure, enabling features like user authentication and data synchronization in real-time.
+
+- **Bootstrap CSS:**
+  - Nova Mind's user interface is designed with Bootstrap CSS, a popular and responsive CSS framework. Bootstrap ensures a consistent and visually appealing layout across different devices, contributing to a user-friendly experience.
+
+## Project Structure
+
+The project structure follows a modular approach. Key directories include:
+
+nova-mind
+├─ .gitignore
+├─ .vercel
+├─ firebase-admin-sdk
+├─ package-lock.json
+├─ package.json
+└─ server
+│   ├─ models
+│   ├─ node_modules
+│   ├─ .gitignore
+│   ├─ authMiddleware.js
+│   ├─ package-lock.json
+│   ├─ package.json
+│   ├─ profileRoutes.js
+│   └─ server.js
+└─ src
+   ├─ App.js
+   ├─ components
+   ├─ context
+   ├─ firebase.js
+   ├─ index.js
+   ├─ reportWebVitals.js
+   └─ Routes.js
 
 ## Features
 
-- **Home:** Navigate to the home page.
-- **Dashboard:** Access the dashboard with protected content.
-- **Resources:** Explore a library of mental health resources.
-- **Therapist Directory:** Find therapists for support.
-- **Profile:** View and manage user profile details.
-- **Register:** Register for a Nova Mind account.
-- **Login:** Log in to your Nova Mind account.
+Nova Mind offers a range of features designed to enhance mental well-being:
 
-## Installation
+- **Personalized Dashboard:** Tailored content based on user preferences.
+- **Community Support:** Engage with others, share experiences, and offer support.
+- **Resource Library:** Articles, videos, and educational materials on mental health.
+- **Goal Tracking:** Monitor progress and achieve personal wellness goals.
+- **Emotion Recognition:** Avatar-based emotional connection.
+- **Feature 6:** Your feature description here.
+- **Feature 7:** Your feature description here.
 
-To run this project locally, follow these steps:
+## Project Details
+
+Nova Mind is more than just a mental wellness platform; it's a community-driven space where individuals can connect, learn, and grow. Our mission is to break the stigma surrounding mental health and provide tools for everyone to lead a healthier and happier life.
+
+## Getting Started
+
+To explore Nova Mind, follow these steps:
+
+### Installation
 
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/nova-mind.git
+   git clone https://github.com/devayanm/Nova-Mind.git
    ```
 
 2. Navigate to the project directory:
@@ -30,87 +80,54 @@ To run this project locally, follow these steps:
    cd nova-mind
    ```
 
-3. Install dependencies:
+3. Install frontend dependencies:
 
    ```bash
    npm install
    ```
 
-4. Start the development server:
+4. Start the frontend development server:
 
    ```bash
    npm start
    ```
 
-5. Open [http://localhost:3000](http://localhost:3000) in your browser to view the application.
+5. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Routes
+6. Navigate to the backend directory:
 
-The project's routing is managed in the `Routes.js` file. Here's a breakdown of the routes:
+   ```bash
+   cd server
+   ```
 
-- `/`: Home page.
-- `/dashboard`: Dashboard with protected content.
-- `/resources`: Library of mental health resources.
-- `/therapists`: Therapist directory.
-- `/profile`: User profile management.
-- `/register`: User registration page.
-- `/login`: User login page.
+7. Install backend dependencies:
 
-## Technologies Used
+   ```bash
+   npm install
+   ```
 
-- React
-- React Router
-- Other dependencies (listed in `package.json`)
+8. Start the backend server:
 
-## Project Structure
+   ```bash
+   npm start
+   ```
 
-The project structure follows a modular approach. Key directories include:
+   or
 
-- `src/components`: Contains React components.
-- `src/services`: Includes services for data fetching or authentication.
-- `src/styles`: Holds stylesheets and design-related files.
+   ```bash
+   node server.js
+   ```
 
-## User-Friendly Interface
+### Contributors
 
-Nova Mind boasts a user-friendly interface, ensuring a simple and intuitive design for easy navigation. Clear and concise language is used to convey information effectively.
-
-## Resource Library
-
-Explore our comprehensive resource library featuring articles, videos, and educational materials related to mental health. Resources are categorized for easy navigation.
-
-## Personalized Recommendations
-
-Nova Mind provides personalized recommendations for mental health practices and activities based on individual needs.
-
-## Community Support
-
-Join our community platform where users can share experiences, tips, and support each other. Engage in forums, discussion boards, or support groups for a sense of community.
-
-## Chat Bot Integration
-
-Nova Mind includes a chat bot, designed by Chanchal, to provide additional support and assistance to users.
-
-## User Engagement Features
-
-Enhance user engagement with features like goal tracking and progress assessments. Foster a supportive and interactive environment for users seeking mental health support.
-
-## Empathetic Response Generation
-
-Nova Mind uses a response generation system that takes into account recognized emotions. This system ensures empathetic and contextually appropriate responses.
-
-## Privacy and Security Measures
-
-We prioritize user privacy by incorporating robust security measures. Sensitive information is handled appropriately, adhering to relevant privacy regulations.
-
-## Real-Time Feedback
-
-Nova Mind integrates real-time feedback mechanisms, including a pie chart representing the percentage of people affected by mental health issues on the website.
-
-## Contributors
+Nova Mind is developed and maintained by the following contributors:
 
 - [Your Name](https://github.com/your-username)
-- [Contributor 2](https://github.com/contributor2)
+- [Contributor Name](https://github.com/contributor-username)
 
-## License
+### Hosted Links
 
-This project is licensed under the [MIT License](LICENSE).
+- **Production:** [https://novamind.vercel.app/](https://novamind.vercel.app/)
+- **Staging:** [https://novamind-staging.vercel.app/](https://novamind-staging.vercel.app/)
+
+---
