@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Link } from 'react-router-dom';
 import {
     faPlus,
     faBullseye,
@@ -121,7 +122,6 @@ const Dashboard = () => {
         }
     };
 
-
     const initiateAppointment = (therapistId) => {
         console.log(`Initiate appointment with therapist ${therapistId}`);
     };
@@ -138,11 +138,23 @@ const Dashboard = () => {
                             </h3>
                             <ul className="list-group">
                                 {goals.map((goal) => (
-                                    <li key={goal._id} className="list-group-item">
+                                    <li key={goal._id} className="list-group-item d-flex align-items-center">
                                         <FontAwesomeIcon icon={faCheckCircle} className="mr-2 text-success" />
-                                        {goal.description}
-                                        <button onClick={() => updateGoal(goal._id)}>Update</button>
-                                        <button onClick={() => deleteGoal(goal._id)}>Delete</button>
+                                        <span>{goal.description}</span>
+                                        <div className="ml-auto">
+                                            <button
+                                                className="btn btn-sm btn-info mr-2"
+                                                onClick={() => updateGoal(goal._id)}
+                                            >
+                                                Update
+                                            </button>
+                                            <button
+                                                className="btn btn-sm btn-danger"
+                                                onClick={() => deleteGoal(goal._id)}
+                                            >
+                                                Delete
+                                            </button>
+                                        </div>
                                     </li>
                                 ))}
                             </ul>
@@ -198,16 +210,6 @@ const Dashboard = () => {
                             <button className="btn btn-primary">Explore Tips</button>
                         </div>
                     </div>
-
-                    <div className="card">
-                        <div className="card-body">
-                            <h3 className="card-title">
-                                <FontAwesomeIcon icon={faClock} className="mr-2" />
-                                Upcoming Appointments
-                            </h3>
-                            <p className="card-text">You have no upcoming appointments.</p>
-                        </div>
-                    </div>
                 </div>
 
                 <div className="col-lg-4">
@@ -232,23 +234,35 @@ const Dashboard = () => {
                         </div>
                     </div>
 
-                    <div className="card">
-                        <div className="card-body">
-                            <h3 className="card-title">
-                                <FontAwesomeIcon icon={faUserMd} className="mr-2" />
-                                Connect with a Therapist
-                            </h3>
-                            <p className="card-text">
-                                Looking for professional help? Connect with a therapist to discuss your mental well-being.
-                            </p>
-                            <button
-                                className="btn btn-primary"
-                                onClick={() => initiateAppointment('therapistId')}
-                            >
-                                Find a Therapist
-                            </button>
+                    <div className="card mb-4">
+                        <div className="card">
+                            <div className="card-body">
+                                <h3 className="card-title">
+                                    <FontAwesomeIcon icon={faUserMd} className="mr-2" />
+                                    Connect with a Therapist
+                                </h3>
+                                <p className="card-text">
+                                    Looking for professional help? Connect with a therapist to discuss your mental well-being.
+                                </p>
+                                <Link to="/find-therapist" className="btn btn-primary">
+                                    Find a Therapist
+                                </Link>
+                            </div>
                         </div>
                     </div>
+
+                    <div className="card mb-4">
+                        <div className="card">
+                            <div className="card-body">
+                                <h3 className="card-title">
+                                    <FontAwesomeIcon icon={faClock} className="mr-2" />
+                                    Upcoming Appointments
+                                </h3>
+                                <p className="card-text">You have no upcoming appointments.</p>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>

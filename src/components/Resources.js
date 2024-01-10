@@ -16,37 +16,37 @@ const Resources = () => {
         {
             id: '1',
             title: 'Webinars',
-            description: 'Explore insightful webinars on various mental health topics.',
+            description: 'Explore insightful webinars on various mental health topics. Gain knowledge from experts and professionals.',
             type: 'Webinar',
         },
         {
             id: '2',
             title: 'Books',
-            description: 'Dive into a collection of mental health-related books.',
+            description: 'Dive into a collection of mental health-related books. Expand your understanding and find inspiration.',
             type: 'Book',
         },
         {
             id: '3',
             title: 'Guides',
-            description: 'Navigate through helpful guides for mental well-being.',
+            description: 'Navigate through helpful guides for mental well-being. Learn practical tips for maintaining a healthy mind.',
             type: 'Guide',
         },
         {
             id: '4',
             title: 'Videos',
-            description: 'Watch videos covering different aspects of mental health.',
+            description: 'Watch videos covering different aspects of mental health. Visualize and comprehend key concepts.',
             type: 'Video',
         },
         {
             id: '5',
             title: 'Podcasts',
-            description: 'Listen to engaging podcasts discussing mental health issues.',
+            description: 'Listen to engaging podcasts discussing mental health issues. Stay informed and entertained on the go.',
             type: 'Podcast',
         },
         {
             id: '6',
             title: 'Articles',
-            description: 'Read informative articles providing insights into mental health.',
+            description: 'Read informative articles providing insights into mental health. Stay updated with the latest research and trends.',
             type: 'Article',
         },
     ];
@@ -58,15 +58,19 @@ const Resources = () => {
                 {(resources.length > 0 ? resources : exampleFeatures).map(feature => (
                     <div key={feature.id} className="col-md-4 mb-4">
                         <div className="card h-100 shadow">
+                            <div className="card-header bg-primary text-white text-center">
+                                <h5>{feature.title}</h5>
+                            </div>
                             <div className="card-body">
-                                {feature.type === 'Webinar' && <FaPlayCircle size={40} className="mb-3 text-primary" />}
-                                {feature.type === 'Book' && <FaBook size={40} className="mb-3 text-success" />}
-                                {feature.type === 'Guide' && <FaFileAlt size={40} className="mb-3 text-info" />}
-                                {feature.type === 'Video' && <FaVideo size={40} className="mb-3 text-warning" />}
-                                {feature.type === 'Podcast' && <FaPodcast size={40} className="mb-3 text-danger" />}
-                                {feature.type === 'Article' && <FaNewspaper size={40} className="mb-3 text-secondary" />}
+                                <div className="text-center mb-3">
+                                    {feature.type === 'Webinar' && <FaPlayCircle size={40} className="text-primary" />}
+                                    {feature.type === 'Book' && <FaBook size={40} className="text-success" />}
+                                    {feature.type === 'Guide' && <FaFileAlt size={40} className="text-info" />}
+                                    {feature.type === 'Video' && <FaVideo size={40} className="text-warning" />}
+                                    {feature.type === 'Podcast' && <FaPodcast size={40} className="text-danger" />}
+                                    {feature.type === 'Article' && <FaNewspaper size={40} className="text-secondary" />}
+                                </div>
 
-                                <h3 className="card-title">{feature.title}</h3>
                                 <p className="card-text">{feature.description}</p>
                                 <Link to={`/${feature.type.toLowerCase()}s`} className="btn btn-primary">
                                     Explore {feature.type}

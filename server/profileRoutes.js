@@ -12,6 +12,7 @@ router.get('/', async (req, res) => {
         }
 
         res.json({
+            name: user.name,
             phoneNumber: user.phoneNumber,
             dateOfBirth: user.dateOfBirth,
             bloodGroup: user.bloodGroup,
@@ -24,7 +25,7 @@ router.get('/', async (req, res) => {
 
 router.post('/update', async (req, res) => {
     const userId = req.user.uid;
-    const { phoneNumber, dateOfBirth, bloodGroup } = req.body;
+    const { name, phoneNumber, dateOfBirth, bloodGroup } = req.body;
 
     try {
         let user = await User.findOne({ userId });
@@ -33,6 +34,7 @@ router.post('/update', async (req, res) => {
             user = new User({ userId });
         }
 
+        user.name = name;
         user.phoneNumber = phoneNumber;
         user.dateOfBirth = dateOfBirth;
         user.bloodGroup = bloodGroup;
@@ -41,6 +43,7 @@ router.post('/update', async (req, res) => {
 
         res.json({
             user: {
+                name: user.name,
                 phoneNumber: user.phoneNumber,
                 dateOfBirth: user.dateOfBirth,
                 bloodGroup: user.bloodGroup,

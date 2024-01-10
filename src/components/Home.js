@@ -4,7 +4,6 @@ import { Pie } from 'react-chartjs-2';
 import 'chart.js/auto';
 import { useState, useEffect } from 'react';
 
-
 const Home = () => {
     const [mentalHealthData, setMentalHealthData] = useState({
         labels: ['Affected', 'Not Affected'],
@@ -58,7 +57,7 @@ const Home = () => {
                         </div>
                         <div className="col-lg-6">
                             <img
-                                src="https://via.placeholder.com/500x300" 
+                                src="./img/img.png"
                                 alt="Who We Are"
                                 className="img-fluid rounded"
                             />
@@ -72,7 +71,7 @@ const Home = () => {
                     <div className="row">
                         <div className="col-lg-6">
                             <img
-                                src="https://via.placeholder.com/500x300" 
+                                src="./img/img1.png"
                                 alt="What We Do"
                                 className="img-fluid rounded"
                             />
@@ -93,7 +92,15 @@ const Home = () => {
                     <h2 className="display-4 text-center text-primary">Our Mission</h2>
                     <p className="lead text-center">
                         Our mission is to break the stigma surrounding mental health, promote awareness, and provide
-                        accessible resources to everyone seeking support.
+                        accessible resources to everyone seeking support. We believe in the transformative power of
+                        community and self-discovery. Together, we embark on a journey to embrace the uniqueness
+                        of each individual, fostering a world where mental well-being is a celebrated part of
+                        the human experience.
+                    </p>
+                    <p className="lead text-center">
+                        Join us as we strive to create a safe space for vulnerability, growth, and empowerment. Let's
+                        rewrite the narrative surrounding mental health and embark on a collective journey towards
+                        a brighter, more compassionate future.
                     </p>
                 </div>
             </section>

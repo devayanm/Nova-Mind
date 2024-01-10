@@ -1,17 +1,30 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useUserAuth } from '../context/UserAuthContext';
-import { ProgressBar, Modal, Button, Form } from 'react-bootstrap';
-import { FaUser, FaSignOutAlt, FaSmile, FaFrown, FaMeh, FaChartPie, FaEdit } from 'react-icons/fa';
+import { Modal, Button, Form, Col, Row } from 'react-bootstrap';
+import {
+    FaUser,
+    FaSignOutAlt,
+    FaSmile,
+    FaFrown,
+    FaMeh,
+    FaEdit,
+    FaBirthdayCake,
+    FaPhoneAlt,
+    FaIdBadge,
+    FaTint,
+} from 'react-icons/fa';
 import { Pie } from 'react-chartjs-2';
 import 'chart.js/auto';
 import axios from 'axios';
+import { motion } from 'framer-motion';
 
 const Profile = () => {
     const { user, logOut } = useUserAuth();
     const navigate = useNavigate();
     const [showEditModal, setShowEditModal] = useState(false);
     const [editedDetails, setEditedDetails] = useState({
+        name: '',
         phoneNumber: '',
         dateOfBirth: '',
         bloodGroup: '',
@@ -41,6 +54,7 @@ const Profile = () => {
             });
 
             setEditedDetails({
+                name: response.data.name || '',
                 phoneNumber: response.data.phoneNumber || '',
                 dateOfBirth: response.data.dateOfBirth || '',
                 bloodGroup: response.data.bloodGroup || '',
@@ -72,6 +86,7 @@ const Profile = () => {
     const handleShowEditModal = () => {
         setShowEditModal(true);
         setEditedDetails({
+            name: user.name || '',
             phoneNumber: user.phoneNumber || '',
             dateOfBirth: user.dateOfBirth || '',
             bloodGroup: user.bloodGroup || '',
@@ -92,6 +107,7 @@ const Profile = () => {
             const response = await axios.post(
                 'http://localhost:3001/profile/update',
                 {
+                    name: editedDetails.name,
                     phoneNumber: editedDetails.phoneNumber,
                     dateOfBirth: editedDetails.dateOfBirth,
                     bloodGroup: editedDetails.bloodGroup,
@@ -105,6 +121,7 @@ const Profile = () => {
             );
 
             setEditedDetails({
+                name: response.data.user.name,
                 phoneNumber: response.data.user.phoneNumber,
                 dateOfBirth: response.data.user.dateOfBirth,
                 bloodGroup: response.data.user.bloodGroup,
@@ -130,21 +147,30 @@ const Profile = () => {
 
     const mood = 'Well';
 
+    const moodVariants = {
+        hidden: { opacity: 0, y: -50 },
+        visible: { opacity: 1, y: 0 },
+    };
+
     return (
         <div className="container mt-4">
-            <h2>Your Profile</h2>
+            <h2 className="mb-4">Your Profile</h2>
             {user && (
                 <div>
-                    <div className="card">
+                    <div className="card mb-4">
                         <div className="card-body">
                             <div className="d-flex align-items-center justify-content-between">
                                 <div>
-                                    <h4>
+                                    <h4 className="mb-3">
                                         <FaUser className="me-2" />
                                         {user.displayName || 'User'}
+
                                     </h4>
-                                    <p>
+                                    <p className="mb-1">
                                         <strong>Email:</strong> {user.email}
+                                    </p>
+                                    <p>
+                                        <strong>Joined:</strong> {user.joinedDate || 'N/A'}
                                     </p>
                                 </div>
                                 <Button variant="outline-danger" onClick={handleLogout}>
@@ -154,21 +180,36 @@ const Profile = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="mt-4">
+                    <div className="mb-4">
                         <h5>Personal Information</h5>
                         <div className="card">
                             <div className="card-body">
-                                <div>
-                                    <p>
-                                        <strong>Phone Number:</strong> {editedDetails.phoneNumber || 'N/A'}
-                                    </p>
-                                    <p>
-                                        <strong>Date of Birth:</strong> {editedDetails.dateOfBirth || 'N/A'}
-                                    </p>
-                                    <p>
-                                        <strong>Blood Group:</strong> {editedDetails.bloodGroup || 'N/A'}
-                                    </p>
-                                </div>
+                                <Row>
+                                    <Col md={4}>
+                                        <p>
+                                            <FaIdBadge className="me-2" />
+                                            <strong>Name:</strong> {editedDetails.name || 'N/A'}
+                                        </p>
+                                    </Col>
+                                    <Col md={4}>
+                                        <p>
+                                            <FaPhoneAlt className="me-2" />
+                                            <strong>Phone Number:</strong> {editedDetails.phoneNumber || 'N/A'}
+                                        </p>
+                                    </Col>
+                                    <Col md={4}>
+                                        <p>
+                                            <FaBirthdayCake className="me-2" />
+                                            <strong>Date of Birth:</strong> {editedDetails.dateOfBirth || 'N/A'}
+                                        </p>
+                                    </Col>
+                                    <Col md={4}>
+                                        <p>
+                                            <FaTint className="me-2" />
+                                            <strong>Blood Group:</strong> {editedDetails.bloodGroup || 'N/A'}
+                                        </p>
+                                    </Col>
+                                </Row>
                                 <Button variant="outline-primary" onClick={handleShowEditModal}>
                                     <FaEdit className="me-2" />
                                     Edit
@@ -176,18 +217,43 @@ const Profile = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="mt-4">
+                    <div className="mb-4">
+                        <motion.h5 initial="hidden" animate="visible" variants={moodVariants}>
+                            Current Mood
+                        </motion.h5>
+                        <div className="card">
+                            <div className="card-body">
+                                <div className="d-flex align-items-center justify-content-center">
+                                    <motion.div
+                                        className="text-center mt-2"
+                                        initial="hidden"
+                                        animate="visible"
+                                        variants={moodVariants}
+                                    >
+                                        {mood === 'Well' && <FaSmile className="text-success" size={50} />}
+                                        {mood === 'Neutral' && <FaMeh className="text-warning" size={50} />}
+                                        {mood === 'Struggling' && <FaFrown className="text-danger" size={50} />}
+                                    </motion.div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="mb-4">
                         <h5>Mental Health Overview</h5>
                         <div className="card">
                             <div className="card-body">
                                 <div className="d-flex align-items-center justify-content-center">
-                                    <Pie data={mentalHealthData} options={pieChartOptions} />
+                                    <motion.div
+                                        initial="hidden"
+                                        animate="visible"
+                                        variants={moodVariants}
+                                        transition={{ duration: 0.5 }}
+                                    >
+                                        <Pie data={mentalHealthData} options={pieChartOptions} />
+                                    </motion.div>
                                 </div>
-                                <div className="text-center mt-2">
-                                    {mood === 'Well' && <FaSmile className="text-success" size={30} />}
-                                    {mood === 'Neutral' && <FaMeh className="text-warning" size={30} />}
-                                    {mood === 'Struggling' && <FaFrown className="text-danger" size={30} />}
-                                </div>
+                                <br />
+
                             </div>
                         </div>
                     </div>
@@ -199,6 +265,15 @@ const Profile = () => {
                 </Modal.Header>
                 <Modal.Body>
                     <Form>
+                        <Form.Group className="mb-3" controlId="formName">
+                            <Form.Label>Name</Form.Label>
+                            <Form.Control
+                                type="text"
+                                placeholder="Enter your full name"
+                                value={editedDetails.name}
+                                onChange={(e) => setEditedDetails({ ...editedDetails, name: e.target.value })}
+                            />
+                        </Form.Group>
                         <Form.Group className="mb-3" controlId="formPhoneNumber">
                             <Form.Label>Phone Number</Form.Label>
                             <Form.Control
